@@ -19,7 +19,7 @@ declare type LanguageStore = Record<string, Language>;
  * Each language object contains the readable name of the
  * language (written in that language) (`name`) and its ISO code (`iso`).
  */
-export const languages : LanguageStore = {
+export const languages: LanguageStore = {
   en: {
     name: 'English',
     iso: 'en-US'
@@ -43,10 +43,14 @@ export const languages : LanguageStore = {
   pt: {
     name: 'Português (Brasil)',
     iso: 'pt-BR'
+  },
+  zh: {
+    name: '简体中文',
+    iso: 'zh-CN'
   }
 }
 
-const getClientLocale = () : string | undefined => {
+const getClientLocale = (): string | undefined => {
   if (typeof navigator === 'undefined') {
     console.log('No navigator, defaulting to English')
     return undefined
@@ -70,7 +74,7 @@ const getClientLocale = () : string | undefined => {
   }
 
   // default to English
-  return 'en'
+  return 'zh'
 }
 
 export default defineNuxtPlugin(({ vueApp, $pinia }) => {
