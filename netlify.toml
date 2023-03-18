@@ -1,28 +1,10 @@
 # Domain redirects
 [[redirects]]
-  from = "http://another-pomodoro.netlify.app/*"
-  to = "https://focustide.app/:splat"
+  from = "https://focus.xf-yun.cn/*"
+  to = "https://focus.xf-yun.cn/:splat"
   status = 301
   force = true
-
-[[redirects]]
-  from = "https://another-pomodoro.netlify.app/*"
-  to = "https://focustide.app/:splat"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "http://another-pomodoro.app/*"
-  to = "https://focustide.app/:splat"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "https://another-pomodoro.app/*"
-  to = "https://focustide.app/:splat"
-  status = 301
-  force = true
-
+  
 [[redirects]]
   from = "/timer"
   to = "/"

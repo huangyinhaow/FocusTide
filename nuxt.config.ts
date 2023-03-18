@@ -186,10 +186,11 @@ export default defineNuxtConfig({
   */
   googleFonts: {
     families: {
-      Lexend: [400, 700]
+      Lexend: [400, 700],
+      Noto+Sans+SC: [400, 700]
     },
-    display: 'swap'
-    // download: true
+    display: 'swap',
+    download: true
   },
 
   /*
