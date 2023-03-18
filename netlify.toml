@@ -1,11 +1,5 @@
 # Domain redirects
 [[redirects]]
-  from = "https://focus.xf-yun.cn/*"
-  to = "https://focus.xf-yun.cn/:splat"
-  status = 301
-  force = true
-  
-[[redirects]]
   from = "/timer"
   to = "/"
   status = 301
