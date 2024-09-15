@@ -84,42 +84,26 @@ const progressBarSchedules = computed(() => {
 </script>
 
 <template>
-  <section
-    class="h-full overflow-hidden duration-300 ease-in dark:text-gray-50"
-  >
+  <section class="h-full overflow-hidden duration-300 ease-in dark:text-gray-50">
     <Title>{{ (remainingTimeString ? `(${remainingTimeString}) ` : '') + pageTitle }}</Title>
 
     <!-- Dark mode background override -->
     <div class="absolute w-full h-full dark:bg-gray-900" />
 
     <!-- Progress bar -->
-    <TransitionGroup name="progress-transition" tag="div" :duration="1000">
-      <TimerProgress
-        v-for="(scheduleItem, index) in progressBarSchedules"
-        :key="scheduleItem.id"
-        :colour="scheduleStore.getScheduleColour[index]"
-        :background="index === 0"
-        :time-elapsed="scheduleStore.getCurrentItem.timeElapsed"
-        :time-original="scheduleStore.getCurrentItem.length"
-      />
+    <TransitionGroup name="progress-transition" :duration="1000">
+      <TimerProgress v-for="(scheduleItem, index) in progressBarSchedules" :key="scheduleItem.id" :colour="scheduleStore.getScheduleColour[index]"
+        :schedule-entry-id="scheduleItem.id" :background="index === 0" :time-elapsed="scheduleStore.getCurrentItem.timeElapsed"
+        :time-original="scheduleStore.getCurrentItem.length" />
     </TransitionGroup>
-    <div
-      class="relative flex flex-col items-center justify-center w-full h-full isolate"
-      :style="{
-        'padding-top': `${mobileSettingsStore.padding.top}px`,
-        'padding-bottom': `${mobileSettingsStore.padding.bottom}px`
-      }"
-    >
+    <div class="relative flex flex-col items-center justify-center w-full h-full isolate" :style="{
+      'padding-top': `${mobileSettingsStore.padding.top}px`,
+      'padding-bottom': `${mobileSettingsStore.padding.bottom}px`
+    }">
       <AppBar />
-      <TimerSwitch
-        key="timerswitch"
-        :time-elapsed="scheduleStore.getCurrentItem.timeElapsed"
-        :time-original="scheduleStore.getCurrentItem.length"
-        :timer-state="scheduleStore.timerState"
-        :timer-widget="settingsStore.currentTimer"
-        class="flex-grow"
-        @tick="state.timeString = $event"
-      />
+      <TimerSwitch key="timerswitch" :time-elapsed="scheduleStore.getCurrentItem.timeElapsed"
+        :time-original="scheduleStore.getCurrentItem.length" :timer-state="scheduleStore.timerState"
+        :timer-widget="settingsStore.currentTimer" class="flex-grow" @tick="state.timeString = $event" />
 
       <TimerControls class="mb-8" />
     </div>
