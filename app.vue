@@ -22,6 +22,7 @@ import Layout from '~/layouts/timer.vue'
 const AppBar = defineAsyncComponent(() => import('@/components/appBar.vue'))
 const TutorialView = defineAsyncComponent(() => import('@/components/tutorial/_tutorialView.vue'))
 
+
 const settingsStore = useSettings()
 const mobileSettingsStore = useMobileSettings()
 const scheduleStore = useSchedule()
@@ -50,6 +51,41 @@ useHead({
     }
   ]
 })
+
+if (!import.meta.server) {
+  useHead({
+    link: [
+      {
+        rel: 'manifest',
+        href: '/app_manifest.json'
+      },
+      {
+        rel: 'apple-touch-icon',
+        href: '/icons/icon-apple-192.png'
+      }
+    ],
+    meta: [
+      { name: 'theme-color', content: '#F87171' }
+    ]
+  })
+
+  onMounted(() => {
+    if (typeof window !== 'undefined') {
+      if ('serviceWorker' in navigator) {
+        const registerSw = () => {
+          console.debug('Registering service worker at /serviceworker.js')
+          navigator.serviceWorker.register('/serviceworker.js')
+        }
+
+        if (document.readyState === 'complete') {
+          registerSw()
+        } else {
+          window.addEventListener('load', registerSw)
+        }
+      }
+    }
+  })
+}
 
 useTicker()
 
