@@ -2,6 +2,30 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.7.0-0](https://github.com/Hanziness/FocusTide/compare/v1.6.0...v1.7.0-0) (2024-09-21)
+
+
+### Features
+
+* **audio:** New sound set and option to change sounds ([#372](https://github.com/Hanziness/FocusTide/issues/372)) ([7b652da](https://github.com/Hanziness/FocusTide/commit/7b652da512a6eda61e42710c2c0f6a6f587c6518))
+
+
+### Bug Fixes
+
+* Add back dark mode handling ([#379](https://github.com/Hanziness/FocusTide/issues/379)) ([6436e65](https://github.com/Hanziness/FocusTide/commit/6436e65c4048540dc0e773841c184bf6f429a21c))
+* **appBar:** Add explicit size to tasks icon ([#378](https://github.com/Hanziness/FocusTide/issues/378)) ([af908f0](https://github.com/Hanziness/FocusTide/commit/af908f012a97dd909a19cade8e4bf5fc2475b6fb))
+* Fix PWA functionality and missing head elements ([#383](https://github.com/Hanziness/FocusTide/issues/383)) ([d77e0fd](https://github.com/Hanziness/FocusTide/commit/d77e0fd58d35846837328bd93b0a67d88d18f43b))
+* **manifest:** Add back missing manifest link, fix screenshot sizes ([#382](https://github.com/Hanziness/FocusTide/issues/382)) ([7fe70e3](https://github.com/Hanziness/FocusTide/commit/7fe70e3526cf61b2fe7054650749ce0fc68b31a1))
+* Use `import.meta.*` properties instead of `process` ([#367](https://github.com/Hanziness/FocusTide/issues/367)) ([cf28bde](https://github.com/Hanziness/FocusTide/commit/cf28bde6a2dd4ec67394785e6124f6cdd8c20053))
+
+
+### Refactors
+
+* **deps:** Update Nuxt to 3.13.2 ([#377](https://github.com/Hanziness/FocusTide/issues/377)) ([8128b4e](https://github.com/Hanziness/FocusTide/commit/8128b4e668418ac240949876064b67789334947c))
+* **icon_resize:** Refactor icon generator to execute in a single run ([#380](https://github.com/Hanziness/FocusTide/issues/380)) ([a52b463](https://github.com/Hanziness/FocusTide/commit/a52b4634f137b45fce545055010701471af5aba7))
+* Move pages/index.vue to app.vue to remove vue-router ([#374](https://github.com/Hanziness/FocusTide/issues/374)) ([744d90c](https://github.com/Hanziness/FocusTide/commit/744d90c35e6842a3c5f3f250643e823b49767c45))
+* Update dependencies ([#369](https://github.com/Hanziness/FocusTide/issues/369)) ([9f04d1b](https://github.com/Hanziness/FocusTide/commit/9f04d1bff5cebc8f53905b79c32456e9f6fb2e7c))
+
 ## [1.6.0](https://github.com/Hanziness/FocusTide/compare/v1.5.2...v1.6.0) (2024-03-11)
 
 
